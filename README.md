@@ -1,5 +1,7 @@
 CMPT 433 Project
 
+![alt text](https://i.imgur.com/ftVQ6PS.png)
+
 Group members:
 Ethan Jung
 David Tran
@@ -16,6 +18,7 @@ How to run the project:
  7. Run the server using the command 'node server.js'
  8. Connect to the server on the host's browser by entering into the address bar: :8088
 
+![alt text](https://i.imgur.com/reGYSAQ.png)
 
 Notes:
  - The plant-manager executable can be stopped via the host by running 'netcat -u  12345', and then entering the command 'stop'

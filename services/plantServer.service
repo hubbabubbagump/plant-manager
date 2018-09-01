@@ -1,0 +1,10 @@
+[Unit]
+Description=HTTPS server to access webpage on port 8088
+
+[Service]
+WorkingDirectory=/opt/plant-manager/webpage/
+ExecStart=/usr/local/n/versions/node/10.6.0/bin/node server.js
+SyslogIdentifier=plantServer
+
+[Install]
+WantedBy=multi-user.target

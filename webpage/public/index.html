@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Plant Manager</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+    <script src="javascripts/liquidFillGauge.js" type="text/javaScript"></script>
+    <script src="javascripts/tempGauge.js" type="text/javaScript"></script>
+    <script src="http://d3js.org/d3.v3.min.js" language="JavaScript"></script>
+
+  
+</head>
+<body>
+    <div class="header">
+    <span class="logo">
+    <img src="../images/plant.png"> Plant Manager
+    </span>  
+    </div>
+    <span class="container"> 
+        <table class="col-sm">
+            <tr>
+                 <td class="controls back">
+                        <h1>Update Settings</h1>
+                        <div class="form-design">
+                            <label>
+                                <b>Current Light Threshold: <span id="light-info">1</span>%</b><br>
+                                Light Level Threshold: <span id="light-thresh-val">1</span>/100<br>
+                                <input class="slider form-number" id="light" type="range" min="1" max="100" value="1"/>
+                            </label>
+                            <br>
+                            <label>
+                                <b>Current Moisture Threshold: <span id="moist-info">1</span>%</b><br>
+                                Moisture Level Threshold: <span id="moist-thresh-val">1</span>/100<br>
+                                <input class="slider form-number" id="moist" type="range" min="1" max="100" value="1"/>
+                            </label>
+                            <br>
+                            <label>
+                                Moisture Approximation: +/-<span id="moist-approx-val">1</span><br>
+                                <input class="slider form-number" id="moist-approx" type="range" min="1" max="25" value="1"/>
+                            </label>
+                            <br>
+                            <label>
+                                <b>Current Temp Threshold: <span id="temp-info">1</span>&#8451</b><br>
+                                Temperature Threshold: <span id="temp-thresh-val">-40</span>&#8451<br>
+                                <input class="slider form-number" id="temp" type="range" min="-40" max="80" value="-40"/>
+                            </label>
+                            <br>
+                            <label>
+                                Temperature Approximation: +/-<span id="temp-approx-val">1</span>&#8451<br>
+                                <input class="slider form-number" id="temp-approx" type="range" min="1" max="10" value="1"/>
+                            </label>
+                            <br>
+                            <label>
+                                <b>Current Humidity Threshold: <span id="humid-info">1</span>%</b><br>
+                                Humidity Threshold: <span id="humid-thresh-val">1</span>/100<br>
+                                <input class="slider form-number" id="humid" type="range" min="1" max="100" value="1"/>
+                            </label>
+                            <br>
+                            <label>
+                                Humidity Approximation: +/-<span id="humid-approx-val">1</span><br>
+                                <input class="slider form-number" id="humid-approx" type="range" min="1" max="25" value="1"/>
+                            </label>
+                        </div>
+                        <button type="button" class="btn-primary"  id="update">Save</button>
+                        <button type="button" class="btn-primary" id="update-data" >Update Data</button>
+                        <button type="button" class="btn-primary" id="water-plant">Water Plant</button>
+                    </td>
+                <td class='status back'>
+                    <h1 class="status-title">Status: <span id="condition"></span></h1>
+                    <table class="guage ">
+                        <tr>
+                            <td class="monitor"> Moisture </td>
+                            <td class="monitor"> Light </td>
+                        </tr>
+                        <tr>
+                            <td>  
+                                <svg id="waterGauge" width="500" height="400"></svg> 
+                            </td>
+                            <td> 
+                                <svg id="lightGauge" width="500" height="400"></svg> 
+                            </td>
+                        </tr>
+                        <tr>
+                        <td class="monitor"> Humidity </td>
+                        <td class="monitor"> Temperature </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <svg class="monitor shift" id="humidGauge"  height="500"></svg> 
+                            </td>
+                            <td>
+                                <svg class="monitor shift" id="tempGauge"   height="500"></svg>
+                            </td>
+                        </tr>
+                    </table>
+                    
+                </td>
+               
+            </tr>    
+        </table>
+    </span>
+<script src='/socket.io/socket.io.js' type='text/javascript'></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src='javascripts/eventManager.js' type='text/javascript'></script>
+<script src='javascripts/dataManager.js' type='text/javascript'></script>
+<script src='javascripts/logicHelper.js' type='text/javascript'></script>
+   
+</body>
+</html>

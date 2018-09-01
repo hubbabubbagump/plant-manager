@@ -1,0 +1,4 @@
+# tar -zxvf /mnt/remote/plant-manager/web.tar.gz
+# systemctl enable ~/plantServer.service
+# systemctl start plantServer.service
+# systemctl stop plantServer.service
